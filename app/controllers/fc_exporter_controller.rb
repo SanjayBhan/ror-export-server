@@ -1,25 +1,79 @@
-# Dependencies to run the this controller
-# 1> rmagick
-# 2> json
-
-# Installing rmagick in ubuntu
-# => First, check that the universe repository is enabled by inspecting '/etc/apt/sources.list' with your favourite editor.
-
-# => You will need to use sudo to ensure that you have permissions to edit the file.
-
-# => If universe is not included then modify the file so that it does.
-
-# => deb http://us.archive.ubuntu.com/ubuntu precise main universe
-# => After any changes you should run this command to update your system.
-
-# => sudo apt-get update
-# => You can now install the package like this.
-
-# => Install librmagick-ruby
-# => sudo apt-get install librmagick-ruby
-
-# => Add this line to your application’s gemfile
-# => gem "rmagick", "~> 2.13.1" 
+# FusionCharts Exporter is a ruby script that handles 
+# FusionCharts (since v3.5.0) Server Side Export feature.
+# This in conjuncture with various export classes would 
+# process FusionCharts Export Data POSTED to it from FusionCharts 
+# and convert the data to image or PDF and subsequently save to the 
+# server or response back as http response to client side as download.
+#
+# This script might be called as the FusionCharts Exporter - main module 
+#
+#    @author FusionCharts
+#    @description FusionCharts Exporter (Server-Side - ROR)
+#    @version 1.0 [ 06 Nov 2014 ]
+#  
+#
+#
+#  ChangeLog / Version History:
+#  ----------------------------
+#       
+#   2.0 [ 21 June 2016 ] 
+#       - Integrated with new Export feature of FusionCharts 3.11.0
+#       - Support for export if direct image is base64 encoded
+#         (data provided by the FusionCharts v3.11.0)
+#         Add a comment to this line
+#       - Support for download in the XLS format
+#       - Export with images suppported for every format including svg 
+#         if browser is capable of sending the image data as SVG format.
+#
+#   1.0 [ 06 Nov 2014 ]
+#       - can process chart data to jpg image and response back to client side as download.
+#       - Support for JavaScript Chart (SVG)
+#       - can save to server side directory
+#       - can provide download or open in popup window.
+#       - can save as PDF/JPG/PNG
+#
+#
+# Copyright (c) 2016 InfoSoft Global Private Limited. All Rights Reserved
+# 
+#
+#  GENERAL NOTES
+#  -------------
+#
+#  Chart would POST export data (which consists of encoded image data stream,  
+#  width, height, background color and various other export parameters like 
+#  exportFormat, exportFileName, exportAction, exportTargetWindow) to this script. 
+#  
+#  The script would process this data using appropriate resource classes & build 
+#  export binary (PDF/image) 
+#
+#  It either saves the binary as file to a server side directory or push it as
+#  Download to client side.
+#
+#
+#
+#  Dependencies to run the this controller
+#    - rmagick
+#    - json
+#
+#  Installing rmagick in ubuntu
+#
+#    - First, check that the universe repository is enabled by inspecting '/etc/apt/sources.list' with your favourite editor.
+#
+#    - You will need to use sudo to ensure that you have permissions to edit the file.
+#
+#    - If universe is not included then modify the file so that it does.
+#
+#    - deb http://us.archive.ubuntu.com/ubuntu precise main universe
+#    - After any changes you should run this command to update your system.
+#
+#    - sudo apt-get update
+#    - You can now install the package like this.
+#
+#    - Install librmagick-ruby
+#    - sudo apt-get install librmagick-ruby
+#
+#    - Add this line to your application’s gemfile
+#    - gem "rmagick", "~> 2.13.1" 
 
 require "RMagick" 
 require 'rubygems'
