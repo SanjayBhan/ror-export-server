@@ -9,7 +9,7 @@
 #
 #    @author FusionCharts
 #    @description FusionCharts Exporter (Server-Side - ROR)
-#    @version 1.0 [ 06 Nov 2014 ]
+#    @version 2.0 [ 21 June 2016 ]
 #  
 #
 #
