@@ -2,6 +2,10 @@
 
 FusionCharts export handler for Ruby on Rails.
 
+# Version 
+
+2.0
+
 ## Installation
 
 Add this line to your application's Gemfile:
