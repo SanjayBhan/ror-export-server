@@ -9,3 +9,4 @@ spec/test_app/public/fusioncharts
 coverage/
 Gemfile.lock
 *.gem
+tmp/
